@@ -1,6 +1,6 @@
 var http = require('http');
 var fs = require('fs');
-
+//测试是否成功更新本地
 var server = http.createServer(function (req,res){
     res.writeHead(200,{'Content-Type':'text/plain'});
     res.end();
