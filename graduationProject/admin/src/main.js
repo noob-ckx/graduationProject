@@ -2,7 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import store from '../store/index.js'
+import store from '../store'
 import VueSocketio from 'vue-socket.io'; 
 import {mapActions}  from "vuex"
 
@@ -14,7 +14,6 @@ new Vue({
   store,
   components: { App },
   template: '<App/>',
-
   methods: {
     ...mapActions(['someActions']),
   },
@@ -23,9 +22,9 @@ new Vue({
     connect() {
       console.log("服务器已连接");
     },
-    //接收数据
+    //接收数据,向vuex数据状态管理发送
     message(data) {
-      this.someActions(data)
+      this.someActions({data})
     }
   }
   

@@ -1,30 +1,39 @@
 <template>
   <div id="app">
-      <text-props :propsa="count"></text-props>
-      <text-props-t :propsT="test"></text-props-t>
+    {{inputVoltage}}<br>{{inputCurrent}}<br>{{invertInputVoltage}}<br>{{invertInputCurren}}<br>{{SCMPowerSupplyVoltage}}<br>
+    {{SCMPowerSupplyCurrent}}<br>{{aOutputVolatge}}<br>{{aOutputCurrent}}<br>{{bOutputVolatge}}<br>{{bOutputCurrent}}<br>
+    {{bOutputVolatge}}<br>{{bOutputCurrent}}
+
+    
   </div>
 </template>
 
 <script>
-import { mapState} from "vuex";
-import TextProps from './components/props/TextProps'
-import TextPropsT from './components/props/TextPropsT'
+import { mapState } from "vuex";
+
 export default {
   computed: {
-    ...mapState(["count", "test"]),
-  },
-  components:{
-    TextProps,TextPropsT
-  },
+    ...mapState(["inputVoltage","inputCurrent",
+    "invertInputVoltage","invertInputCurren","SCMPowerSupplyVoltage",
+    "SCMPowerSupplyCurrent","aOutputVolatge","aOutputCurrent",
+    "bOutputVolatge","bOutputCurrent","bOutputVolatge","bOutputCurrent",
+    ])
+  }
 };
+//       inputVoltage: 0,
+//       inputVoltage: 0,
+//       inputCurrent: 0,
+//       invertInputVoltage: 0,
+//       invertInputCurren: 0,
+//       SCMPowerSupplyVoltage: 0,
+//       SCMPowerSupplyCurrent: 0,
+//       aOutputVolatge: 0,
+//       aOutputCurrent: 0,
+//       bOutputVolatge: 0,
+//       bOutputCurrent: 0,
+//       cOutputVolatge: 0,
+//       cOutputCurrent: 0,
 </script>
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
