@@ -4,7 +4,7 @@
     {{SCMPowerSupplyCurrent}}<br>{{aOutputVolatge}}<br>{{aOutputCurrent}}<br>{{bOutputVolatge}}<br>{{bOutputCurrent}}<br>
     {{bOutputVolatge}}<br>{{bOutputCurrent}}
 
-    
+    <button @click="send()">发送</button>
   </div>
 </template>
 
@@ -18,21 +18,13 @@ export default {
     "SCMPowerSupplyCurrent","aOutputVolatge","aOutputCurrent",
     "bOutputVolatge","bOutputCurrent","bOutputVolatge","bOutputCurrent",
     ])
-  }
+  },
+  methods: {
+    send() {
+      this.$socket.emit('test', "something");
+    }
+  },
 };
-//       inputVoltage: 0,
-//       inputVoltage: 0,
-//       inputCurrent: 0,
-//       invertInputVoltage: 0,
-//       invertInputCurren: 0,
-//       SCMPowerSupplyVoltage: 0,
-//       SCMPowerSupplyCurrent: 0,
-//       aOutputVolatge: 0,
-//       aOutputCurrent: 0,
-//       bOutputVolatge: 0,
-//       bOutputCurrent: 0,
-//       cOutputVolatge: 0,
-//       cOutputCurrent: 0,
 </script>
 <style>
 

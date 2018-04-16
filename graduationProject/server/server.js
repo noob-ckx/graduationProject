@@ -31,7 +31,7 @@ io.sockets.on('connection',function(socket){
     },1000)
 
     //接收前台数据
-    socket.on('send',function(data){
+    socket.on('test',function(data){
         console.log(data);
     });
 
