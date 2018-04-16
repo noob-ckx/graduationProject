@@ -7,7 +7,9 @@ var serialPort = new SerialPort(
 		parity: 'none',   //奇偶校验
 		stopBits: 1,   //停止位
 		flowControl: false
-	}, false);
+	}, function(err){
+		console.log(err)
+	});
 serialPort.open(function (error) {
 	if (error) {
 		console.log("打开端口" + portName + "错误：" + error);
@@ -17,6 +19,6 @@ serialPort.open(function (error) {
 		serialPort.on('data', function (data) {
 			console.log(data);
 		})
-	}
+	}	
 });
 

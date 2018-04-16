@@ -3,6 +3,9 @@ import api from '../config'
 export default {
     someActions({commit}, {data,success,fail}) {
         let BUF = Buffer.from(data)//复制传入的Buffer实例的数据，并返回一个新的Buffer，不复制无法进行Buffer操作
+        // console.log(BUF[2].toString(2).split(""))
+        //开关量
+        commit(api.SWITCH_API.moutation,BUF[api.SWITCH_API.Offsetbyte])
         //输入电压
         commit(api.INPUT_VOLTAGE_API.moutation,BUF.readFloatBE(api.INPUT_VOLTAGE_API.Offsetbyte))
         //输入电流

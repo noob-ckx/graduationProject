@@ -1,4 +1,5 @@
 const state = {
+    power:0,
     inputVoltage: 0,
     inputCurrent: 0,
     invertInputVoltage: 0,

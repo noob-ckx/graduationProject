@@ -7,6 +7,12 @@
 //暂定版
 
 export default {
+  'SWITCH_API':{
+    type: 'SWITCH_ACTION',
+    moutation: 'SWITCH_MOUTATION',
+    Offsetbyte: 2,
+    message: '开关量'
+  },
   'INPUT_VOLTAGE_API':{
     type: 'INPUT_VOLTAGE_ACTION',
     moutation: 'INPUT_VOLTAGE_MOUTATION',
