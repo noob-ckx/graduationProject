@@ -27,9 +27,9 @@ serialPort.on('data', function (data) {
 			})
 		}
 	};
-	if(size == 52 || data[data.length-1] == "0xbb"){
+	if(size == 612 || data[data.length-1] == "0xbb"){
 		const sendData = Buffer.concat(dataArr,size);
-		if(sendData[51] == "0xbb" && size == 52){
+		if(sendData[611] == "0xbb" && size == 612){
 			console.log("数据包完整接收，开启子进程");
 			// io.emit('message', sendData);
 			//开启子进程处理数据，存储数据
@@ -43,7 +43,7 @@ serialPort.on('data', function (data) {
 					console.log("子进程已退出")
 				}
 			});
-		}else if(size != 52){
+		}else if(size != 612){
 			console.log("数据包数量错误，丢弃");
 		}else if(data[data.length-1] != "0xbb"){
 			console.log("尾部校验错误,丢弃");
